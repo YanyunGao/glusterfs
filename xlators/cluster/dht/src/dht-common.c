@@ -1430,6 +1430,7 @@ unlock:
         }
 
         if (local->need_lookup_everywhere) {
+            local->cached_subvol = NULL;
             local->need_lookup_everywhere = 0;
             dht_lookup_everywhere(frame, this, &local->loc);
             return 0;
